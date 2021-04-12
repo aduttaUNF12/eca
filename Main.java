@@ -43,6 +43,7 @@ public class Main implements Runnable{
 	public static double results[] = {0,0,0};
 	
 	public static int Trials = 10;
+	public static int RoomSizeBF[] = {3,4,5};
 	public static int RoomSizeV1[] = {20, 30, 40 ,50};
 	public static int RoomSizeV2[] = {100, 200, 300, 400, 500};
 	public static int TrialRCs[] = {5, 10, 15};
@@ -169,10 +170,10 @@ public class Main implements Runnable{
 			Open.clear();
 			Closed.clear();
 			BestPath.clear();
-			System.out.println("Enter 4 to begin Data Collection");
-			input = scan.nextInt();
-			for(int N = 0; N < RoomSizeV1.length; N++) {
-				RoomSize = RoomSizeV1[N];
+			//System.out.println("Enter 4 to begin Data Collection");
+			input = 4;//scan.nextInt();//4 for data collection mode.
+			for(int N = 0; N < RoomSizeV2.length; N++) {
+				RoomSize = RoomSizeV2[N];
 				for(int W = 0; W < TrialRCs.length; W++) {
 					RCpercentage = TrialRCs[W];
 					for(int T = 0; T < TrialBudgets.length; T++) {
@@ -302,7 +303,7 @@ public class Main implements Runnable{
 				}
 			}
 			System.out.println("Enter 0 to quit or anything else to run the program again");
-			int quit = scan.nextInt();
+			int quit = 0;//scan.nextInt();//0 to quit.
 			if (quit == 0) {
 				scan.close();
 				System.exit(0);
